@@ -96,10 +96,12 @@
    */
   function aosInit() {
     AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
+      duration: 900,
+      easing: 'ease-out-cubic',
+      once: false,
+      mirror: false,
+      offset: 80,
+      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
     });
   }
   window.addEventListener('load', aosInit);
