@@ -1136,3 +1136,29 @@ button:focus-visible {
     transition: none !important;
   }
 }
+
+/* =========================
+   DEVELOPER PROFILE LINK
+========================= */
+
+.developer-credit {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #9299A8;
+}
+
+.developer-credit a {
+  color: #D4AF37;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.developer-credit a:hover {
+  color: #F2D675;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.55);
+}
+
+.developer-credit a i {
+  font-size: 11px;
+}
