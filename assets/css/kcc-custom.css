@@ -1,4 +1,4 @@
-
+﻿
 /* =========================================================
    KCC LANDING PAGE
    MIDNIGHT NAVY + GOLD THEME
@@ -201,6 +201,8 @@ section {
 }
 
 .kcc-hero-artwork img {
+  position: static;
+  inset: auto;
   display: block;
   width: 100%;
   height: auto;
@@ -843,6 +845,13 @@ section {
   border-top: 1px solid var(--kcc-border);
 }
 
+.kcc-footer .footer-brand .brand-logo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: contain;
+}
+
 .footer h3,
 .footer h4 {
   color: var(--kcc-gold);
@@ -1023,4 +1032,133 @@ section {
 ::selection {
   background: var(--kcc-gold);
   color: var(--kcc-midnight);
+}
+
+.news-story-content {
+  padding: clamp(22px, 2.5vw, 28px);
+}
+
+.programs-footer,
+.campus-footer,
+.news-bottom {
+  margin-top: clamp(24px, 3vw, 34px);
+  padding: clamp(19px, 2.2vw, 25px);
+}
+
+.inquiry-band {
+  padding: clamp(42px, 5vw, 62px) 0;
+}
+
+/* Unified soft gold hover treatment for interactive cards. */
+.value-card,
+.program-card,
+.news-grid article,
+.campus-photo {
+  transition:
+    transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.value-card:hover,
+.program-card:hover,
+.news-grid article:hover,
+.campus-photo:hover {
+  border-color: rgba(228, 196, 94, 0.72);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    0 0 22px rgba(212, 175, 55, 0.065);
+}
+
+@keyframes kcc-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes kcc-ambient-glow {
+  from {
+    opacity: 0.58;
+    transform: translateX(-50%) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+@keyframes kcc-light-sweep {
+  0%, 18% {
+    left: -55%;
+    opacity: 0;
+  }
+  28% {
+    opacity: 1;
+  }
+  52% {
+    left: 125%;
+    opacity: 0;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #hero.kcc-hero {
+    padding: 28px 0 48px;
+  }
+
+  #hero .kcc-hero-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #hero .kcc-hero-artwork {
+    border-radius: 12px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .index-page main > .section {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  .program-card {
+    min-height: 0;
+  }
+
+  .value-card {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero .kcc-hero-artwork,
+  #hero.kcc-hero::after,
+  #hero .kcc-hero-artwork::after {
+    animation: none !important;
+  }
+
+  .value-card,
+  .program-card,
+  .news-grid article,
+  .campus-photo,
+  .hero-actions .btn {
+    transition: none !important;
+  }
 }
